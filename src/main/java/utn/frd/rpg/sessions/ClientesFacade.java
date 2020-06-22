@@ -8,7 +8,7 @@ package utn.frd.rpg.sessions;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import utn.frd.rpg.Clientes;
+import utn.frd.rpg.entity.Clientes;
 
 /**
  *

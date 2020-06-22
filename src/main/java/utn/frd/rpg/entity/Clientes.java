@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package utn.frd.rpg;
+package utn.frd.rpg.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,6 +16,8 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -33,12 +36,6 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Clientes.findByDireccion", query = "SELECT c FROM Clientes c WHERE c.direccion = :direccion")})
 public class Clientes implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "id")
-    private Integer id;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 255)
@@ -47,6 +44,26 @@ public class Clientes implements Serializable {
     @Size(max = 255)
     @Column(name = "direccion")
     private String direccion;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "dni")
+    private int dni;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "fechaNnacimiento")
+    @Temporal(TemporalType.DATE)
+    private Date fechaNnacimiento;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "telefono")
+    private int telefono;
+
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "id")
+    private Integer id;
 
     public Clientes() {
     }
@@ -68,21 +85,6 @@ public class Clientes implements Serializable {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
 
     @Override
     public int hashCode() {
@@ -107,6 +109,46 @@ public class Clientes implements Serializable {
     @Override
     public String toString() {
         return "utn.frd.rpg.Clientes[ id=" + id + " ]";
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public int getDni() {
+        return dni;
+    }
+
+    public void setDni(int dni) {
+        this.dni = dni;
+    }
+
+    public Date getFechaNnacimiento() {
+        return fechaNnacimiento;
+    }
+
+    public void setFechaNnacimiento(Date fechaNnacimiento) {
+        this.fechaNnacimiento = fechaNnacimiento;
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
     }
     
 }

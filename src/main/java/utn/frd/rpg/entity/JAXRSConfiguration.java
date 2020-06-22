@@ -1,4 +1,4 @@
-package utn.frd.rpg;
+package utn.frd.rpg.entity;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
