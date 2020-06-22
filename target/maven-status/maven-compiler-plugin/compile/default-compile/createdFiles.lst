@@ -1,0 +1,9 @@
+utn\frd\rpg\AbstractFacade.class
+utn\frd\rpg\rest\services\ApplicationConfig.class
+utn\frd\rpg\Clientes.class
+utn\frd\rpg\ClientesFacade.class
+utn\frd\rpg\JAXRSConfiguration.class
+utn\frd\rpg\sessions\AbstractFacade.class
+utn\frd\rpg\rest\services\ClienteRest.class
+utn\frd\rpg\resources\JavaEE8Resource.class
+utn\frd\rpg\sessions\ClientesFacade.class
