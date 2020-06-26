@@ -8,14 +8,14 @@ package utn.frd.rpg.sessions;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import utn.frd.rpg.entities.Clientes;
+import utn.frd.rpg.entities.Cuentas;
 
 /**
  *
  * @author Pablo
  */
 @Stateless
-public class ClientesFacade extends AbstractFacade<Clientes> {
+public class CuentasFacade extends AbstractFacade<Cuentas> {
 
     @PersistenceContext(unitName = "jdbc/MySQLDataSouce")
     private EntityManager em;
@@ -25,8 +25,8 @@ public class ClientesFacade extends AbstractFacade<Clientes> {
         return em;
     }
 
-    public ClientesFacade() {
-        super(Clientes.class);
+    public CuentasFacade() {
+        super(Cuentas.class);
     }
     
 }

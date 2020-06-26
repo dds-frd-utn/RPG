@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package utn.frd.rpg.rest.services;
+import javax.ws.rs.Path;
+import javax.ejb.EJB;
+import utn.frd.rpg.sessions.ClientesFacade;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
@@ -15,7 +18,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import utn.frd.rpg.entity.Clientes;
+import utn.frd.rpg.entities.Clientes;
 import utn.frd.rpg.sessions.ClientesFacade;
 
 
@@ -49,7 +52,7 @@ public class ClienteRest {
     public void edit(@PathParam("id")long id, Clientes cliente){
         ejbClienteFacade.edit(cliente);
     }
-        //eliminar entidades
+  //eliminar entidades
     @DELETE
     @Consumes({MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN})
     @Path("/{id}")
@@ -64,7 +67,5 @@ public class ClienteRest {
     public Clientes findById(@PathParam("id")long id){
         return ejbClienteFacade.find(id);
     }
+
 }
-
-
-

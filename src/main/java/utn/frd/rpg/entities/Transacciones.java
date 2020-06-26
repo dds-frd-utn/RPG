@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package utn.frd.rpg.entity;
+package utn.frd.rpg.entities;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -38,6 +38,12 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Transacciones.findByIdnroCuenta", query = "SELECT t FROM Transacciones t WHERE t.idnroCuenta = :idnroCuenta")})
 public class Transacciones implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "id")
+    private Integer id;
     @Basic(optional = false)
     @NotNull
     @Column(name = "nroTransaccion")
@@ -59,13 +65,6 @@ public class Transacciones implements Serializable {
     @NotNull
     @Column(name = "id_nroCuenta")
     private int idnroCuenta;
-
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "id")
-    private Integer id;
 
     public Transacciones() {
     }
@@ -89,40 +88,6 @@ public class Transacciones implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-
-    public int getIdnroCuenta() {
-        return idnroCuenta;
-    }
-
-    public void setIdnroCuenta(int idnroCuenta) {
-        this.idnroCuenta = idnroCuenta;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Transacciones)) {
-            return false;
-        }
-        Transacciones other = (Transacciones) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "utn.frd.rpg.Transacciones[ id=" + id + " ]";
     }
 
     public int getNroTransaccion() {
@@ -156,4 +121,38 @@ public class Transacciones implements Serializable {
     public void setImpuesto(int impuesto) {
         this.impuesto = impuesto;
     }
+
+    public int getIdnroCuenta() {
+        return idnroCuenta;
+    }
+
+    public void setIdnroCuenta(int idnroCuenta) {
+        this.idnroCuenta = idnroCuenta;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Transacciones)) {
+            return false;
+        }
+        Transacciones other = (Transacciones) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "utn.frd.rpg.entities.Transacciones[ id=" + id + " ]";
+    }
+    
 }

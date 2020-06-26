@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package utn.frd.rpg.entity;
+package utn.frd.rpg.entities;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
@@ -35,6 +35,12 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Cuentas.findByIdCliente", query = "SELECT c FROM Cuentas c WHERE c.idCliente = :idCliente")})
 public class Cuentas implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "id")
+    private Integer id;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 255)
@@ -52,13 +58,6 @@ public class Cuentas implements Serializable {
     @NotNull
     @Column(name = "id_cliente")
     private int idCliente;
-
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "id")
-    private Integer id;
 
     public Cuentas() {
     }
@@ -83,6 +82,29 @@ public class Cuentas implements Serializable {
         this.id = id;
     }
 
+    public String getTransacciones() {
+        return transacciones;
+    }
+
+    public void setTransacciones(String transacciones) {
+        this.transacciones = transacciones;
+    }
+
+    public int getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
+    }
+
+    public int getNroCuenta() {
+        return nroCuenta;
+    }
+
+    public void setNroCuenta(int nroCuenta) {
+        this.nroCuenta = nroCuenta;
+    }
 
     public int getIdCliente() {
         return idCliente;
@@ -114,31 +136,7 @@ public class Cuentas implements Serializable {
 
     @Override
     public String toString() {
-        return "utn.frd.rpg.Cuentas[ id=" + id + " ]";
+        return "utn.frd.rpg.entities.Cuentas[ id=" + id + " ]";
     }
-
-    public String getTransacciones() {
-        return transacciones;
-    }
-
-    public void setTransacciones(String transacciones) {
-        this.transacciones = transacciones;
-    }
-
-    public int getSaldo() {
-        return saldo;
-    }
-
-    public void setSaldo(int saldo) {
-        this.saldo = saldo;
-    }
-
-    public int getNroCuenta() {
-        return nroCuenta;
-    }
-
-    public void setNroCuenta(int nroCuenta) {
-        this.nroCuenta = nroCuenta;
-    }
-
+    
 }

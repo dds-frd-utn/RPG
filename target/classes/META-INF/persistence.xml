@@ -2,8 +2,9 @@
 <persistence version="2.2" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
   <!-- Define Persistence Unit -->
   <persistence-unit name="my_persistence_unit">
-    <class>utn.frd.rpg.entity.Transacciones</class>
-    <class>utn.frd.rpg.entity.Clientes</class>
-    <class>utn.frd.rpg.entity.Cuentas</class>
+    <class>utn.frd.rpg.entities.Cuentas</class>
+    <class>utn.frd.rpg.entities.Clientes</class>
+    <class>utn.frd.rpg.entities.Transacciones</class>
+    <jta-data-source>jdbc/MySQLDataSouce</jta-data-source>
   </persistence-unit>
 </persistence>
