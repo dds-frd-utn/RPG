@@ -1,0 +1,9 @@
+utn\frd\rpg\service\TransaccionesFacadeREST.class
+utn\frd\rpg\JAXRSConfiguration.class
+utn\frd\rpg\entity\Clientes.class
+utn\frd\rpg\entity\Transacciones.class
+utn\frd\rpg\service\CuentasFacadeREST.class
+utn\frd\rpg\service\ClientesFacadeREST.class
+utn\frd\rpg\entity\Cuentas.class
+utn\frd\rpg\resources\JavaEE8Resource.class
+utn\frd\rpg\service\AbstractFacade.class
